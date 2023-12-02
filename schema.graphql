@@ -1,0 +1,487 @@
+type AdminChanged @entity(immutable: true) {
+  id: Bytes!
+  previousAdmin: Bytes! # address
+  newAdmin: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BeaconUpgraded @entity(immutable: true) {
+  id: Bytes!
+  beacon: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ClosingOnlySet @entity(immutable: true) {
+  id: Bytes!
+  symbol: Bytes! # bytes16
+  closingOnly: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Initialized @entity(immutable: true) {
+  id: Bytes!
+  version: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type InstrumentCreated @entity(immutable: true) {
+  id: Bytes!
+  symbol: Bytes! # bytes16
+  base: Bytes! # address
+  quote: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Paused @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PositionUpserted @entity(immutable: true) {
+  id: Bytes!
+  positionId: Bytes! # bytes32
+  owner: Bytes! # address
+  tradedBy: Bytes! # address
+  cashflowCcy: Int! # uint8
+  cashflow: BigInt! # int256
+  quantityDelta: BigInt! # int256
+  price: BigInt! # uint256
+  fee: BigInt! # uint256
+  feeCcy: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RoleAdminChanged @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  previousAdminRole: Bytes! # bytes32
+  newAdminRole: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RoleGranted @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RoleRevoked @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Unpaused @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Upgraded @entity(immutable: true) {
+  id: Bytes!
+  implementation: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type FeeManagerAdminChanged @entity(immutable: true) {
+  id: Bytes!
+  previousAdmin: Bytes! # address
+  newAdmin: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeeManagerBeaconUpgraded @entity(immutable: true) {
+  id: Bytes!
+  beacon: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeePaid @entity(immutable: true) {
+  id: Bytes!
+  positionId: Bytes! # bytes32
+  trader: Bytes! # address
+  referrer: Bytes! # address
+  referrerAmount: BigInt! # uint256
+  traderRebate: BigInt! # uint256
+  protocolFee: BigInt! # uint256
+  feeCcy: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeeManagerInitialized @entity(immutable: true) {
+  id: Bytes!
+  version: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeeManagerRoleAdminChanged @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  previousAdminRole: Bytes! # bytes32
+  newAdminRole: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeeManagerRoleGranted @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeeManagerRoleRevoked @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type FeeManagerUpgraded @entity(immutable: true) {
+  id: Bytes!
+  implementation: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type OrderManagerAdminChanged @entity(immutable: true) {
+  id: Bytes!
+  previousAdmin: Bytes! # address
+  newAdmin: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderManagerBeaconUpgraded @entity(immutable: true) {
+  id: Bytes!
+  beacon: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type GasMultiplierSet @entity(immutable: true) {
+  id: Bytes!
+  gasMultiplier: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type GasTipSet @entity(immutable: true) {
+  id: Bytes!
+  gasTip: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderManagerInitialized @entity(immutable: true) {
+  id: Bytes!
+  version: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderCancelled @entity(immutable: true) {
+  id: Bytes!
+  orderId: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderExecuted @entity(immutable: true) {
+  id: Bytes!
+  orderId: Bytes! # bytes32
+  positionId: Bytes! # bytes32
+  keeperReward: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderPlaced @entity(immutable: true) {
+  id: Bytes!
+  orderId: Bytes! # bytes32
+  positionId: Bytes! # bytes32
+  owner: Bytes! # address
+  quantity: BigInt! # int256
+  limitPrice: BigInt! # uint256
+  tolerance: BigInt! # uint256
+  cashflow: BigInt! # int256
+  cashflowCcy: Int! # uint8
+  deadline: BigInt! # uint256
+  orderType: Int! # uint8
+  placedBy: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderManagerRoleAdminChanged @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  previousAdminRole: Bytes! # bytes32
+  newAdminRole: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderManagerRoleGranted @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderManagerRoleRevoked @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OrderManagerUpgraded @entity(immutable: true) {
+  id: Bytes!
+  implementation: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+type UnderlyingPositionFactoryMoneyMarketRegistered @entity(immutable: true) {
+  id: Bytes!
+  mm: Int! # uint8
+  moneyMarket: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UnderlyingPositionFactoryRoleAdminChanged @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  previousAdminRole: Bytes! # bytes32
+  newAdminRole: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UnderlyingPositionFactoryRoleGranted @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UnderlyingPositionFactoryRoleRevoked @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UnderlyingPositionCreated @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  positionId: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+# Token details
+type Token @entity {
+  id: ID!
+  #token name
+  name: String!
+  #token symbol
+  symbol: String!
+  #decimals used
+  decimals: BigDecimal!
+}
+
+# account details
+type Account @entity {
+  #account address
+  id: ID!
+  #balances
+  balances: [TokenBalance!]! @derivedFrom(field: "account")
+}
+# token balance details
+type TokenBalance @entity {
+  id: ID!
+  #token
+  token: Token!
+  #account
+  account: Account!
+  #amount
+  amount: BigDecimal!
+}
+
+type Owner @entity {
+  id: Bytes!
+}
+
+type VToken @entity {
+  symbol: String
+  decimals: Int
+  id: Bytes!
+  name: String
+}
+
+type InstrumentStore @entity {
+  id: Bytes!
+  base: Bytes
+  baseUnit: BigInt
+  quote: Bytes
+  quoteUnit: BigInt
+  symbol: Bytes
+}
+
+type Instrument @entity {
+  id: Bytes!
+  symbol: String
+  Bytes: Bytes
+  base: VToken
+  quote: VToken
+}
+
+type HistoryItem @entity {
+  blockTimestamp: BigInt
+  openQuantity: BigDecimal
+  previousOpenQuantity: BigDecimal
+  openCost: BigDecimal
+  closedCost: BigDecimal
+  previousOpenCost: BigDecimal
+  realisedPnLBase: BigInt
+  realisedPnLQuote: BigInt
+  equityQuote: BigInt
+  equityBase: BigInt
+  fillCost: BigDecimal
+  fillSize: BigDecimal
+  fillPrice: BigDecimal
+  cashflowCcy: String
+  cashflowBase: BigInt
+  cashflowQuote: BigInt
+  feeBase: BigInt
+  feeQuote: BigInt
+  feeBaseAcc: BigInt
+  feeQuoteAcc: BigInt
+  executionFeeBase: BigInt
+  executionFeeQuote: BigInt
+  liquidationPenaltyQuote: BigInt
+  liquidationPenaltyBase: BigInt
+  position: Position
+  owner: Owner
+  blockNumber: BigInt
+  transactionHash: Bytes
+  prevTransactionHash: Bytes
+  dateTime: String
+  id: Bytes!
+}
+
+type History @entity {
+  blockTimestamp: BigInt
+  openQuantity: BigDecimal!
+  previousOpenQuantity: BigDecimal!
+  openCost: BigDecimal!
+  previousOpenCost: BigDecimal!
+  realisedPnLBase: BigDecimal!
+  realisedPnLQuote: BigDecimal
+  equityQuote: BigDecimal
+  equityBase: BigDecimal
+  fillCost: BigDecimal
+  fillSize: BigDecimal
+  feeBase: BigDecimal
+  feeQuote: BigDecimal
+  id: ID!
+  limitPrice: BigDecimal
+  type: String
+  nquantity: BigDecimal
+  cashflowBase: BigDecimal
+  cashflowQuote: BigDecimal
+  number: BigInt
+  owner: Owner
+  creationBlockTimestamp: BigInt
+  blockNumber: BigInt
+}
+
+type Position @entity {
+  id: Bytes!
+  feesBase: BigInt
+  feesQuote: BigInt
+  instrument: Instrument
+  history: [History!]!
+  orders: [History!]!
+  quantity: BigDecimal
+  openCost: BigDecimal!
+  cashflowBase: BigDecimal
+  cashflowQuote: BigDecimal
+  equityBase: BigDecimal
+  equityQuote: BigDecimal
+  number: BigInt
+  realisedPnLBase: BigDecimal
+  realisedPnLQuote: BigDecimal
+  owner: Owner
+  creationBlockTimestamp: BigInt
+}

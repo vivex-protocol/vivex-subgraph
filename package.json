@@ -1,0 +1,18 @@
+{
+  "name": "v2-arbitrum",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ burner0621/v2-arbitrum --deploy-key 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",
+    "create-local": "graph create --node http://localhost:8020/ burner0621/v2-arbitrum",
+    "remove-local": "graph remove --node http://localhost:8020/ burner0621/v2-arbitrum",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 burner0621/v2-arbitrum",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.61.0",
+    "@graphprotocol/graph-ts": "0.30.0"
+  },
+  "devDependencies": { "matchstick-as": "0.5.0" }
+}

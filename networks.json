@@ -1,0 +1,20 @@
+{
+  "arbitrum-one": {
+    "Contango": {
+      "address": "0x384231BCC5652295f77b4A59B352234Db860A0d5",
+      "startBlock": 137137052
+    },
+    "FeeManager": {
+      "address": "0xab80F3EC64Fd4985eaCe359323d24d7c9d0De269"
+    },
+    "OrderManager": {
+      "address": "0x1231F1d0173bFa60F49b34a8128ecB0CD861f441"
+    },
+    "UnderlyingPositionFactory": {
+      "address": "0xDaBA83815404f5e1bc33f5885db7D96F51e127F5"
+    },
+    "ERC20": {
+      "address": "0x4d224452801ACEd8B2F0aebE155379bb5D594381"
+    }
+  }
+}
